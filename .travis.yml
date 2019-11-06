@@ -2,6 +2,6 @@ git:
   depth: 3
 language: java
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 before_install:
   - chmod +x mvnw
