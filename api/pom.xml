@@ -9,12 +9,14 @@
     </parent>
     <groupId>be.landtlord</groupId>
     <artifactId>api</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>${revision}</version>
     <name>api</name>
 
     <properties>
         <java.version>11</java.version>
     </properties>
+
+
 
     <build>
         <plugins>
