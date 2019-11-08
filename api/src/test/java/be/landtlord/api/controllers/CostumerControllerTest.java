@@ -3,6 +3,7 @@ package be.landtlord.api.controllers;
 import be.landtlord.service.mappers.CostumerDTO;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
@@ -33,6 +34,12 @@ class CostumerControllerTest {
                 .body()
                 .as(CostumerDTO.class);
 
+        Assertions.assertThat(response.getId()).isNotNull();
+        Assertions.assertThat(response.getLastName()).isEqualTo("Landtsheer");
+        Assertions.assertThat(response.getFirstName()).isEqualTo("Andy");
+        Assertions.assertThat(response.getEMail()).isEqualTo("andy.landtsheer@email.be");
+        Assertions.assertThat(response.getAdress()).isEqualTo("adress");
+        Assertions.assertThat(response.getPhoneNumber()).isEqualTo("012/345678");
 
     }
 }
